@@ -463,7 +463,7 @@
         #progress-row { display: flex; align-items: center; gap: 8px; width: 100%; }
         #progress-row .time { font-size: 0.6rem; color: var(--fg-subtle); min-width: 32px; text-align: center; }
 
-        #progress-container { position: relative; flex: 1; height: 4px; background: var(--progress-bg); border-radius: 2px; cursor: pointer; transition: height 0.1s ease; }
+        #progress-container { position: relative; flex: 1; height: 4px; background: var(--progress-bg); border-radius: 2px; cursor: pointer; transition: height 0.1s ease; padding: 10px 0; margin: -10px 0; box-sizing: content-box; background-clip: content-box; }
         #progress-container:hover { height: 6px; }
         #progress-bar { position: relative; height: 100%; background: var(--fg); border-radius: 2px; width: 0%; transition: width 0.1s linear; }
         #progress-container:hover #progress-bar { background: var(--accent); }
