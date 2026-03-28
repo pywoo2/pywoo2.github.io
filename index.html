@@ -760,10 +760,22 @@
 
         audio.addEventListener('ended', () => playNext());
 
-        progressContainer.addEventListener('click', e => {
+        function seekFromEvent(e) {
             if (!audio.duration) return;
-            audio.currentTime = (e.offsetX / progressContainer.offsetWidth) * audio.duration;
+            const rect = progressContainer.getBoundingClientRect();
+            const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            audio.currentTime = ratio * audio.duration;
+        }
+
+        let isDragging = false;
+        progressContainer.addEventListener('mousedown', e => {
+            isDragging = true;
+            seekFromEvent(e);
         });
+        document.addEventListener('mousemove', e => {
+            if (isDragging) seekFromEvent(e);
+        });
+        document.addEventListener('mouseup', () => { isDragging = false; });
 
         audio.volume = 0.8;
         volumeSlider.addEventListener('input', e => { audio.volume = parseFloat(e.target.value); });
