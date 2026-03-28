@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Falling Through the Frets",
+    "tags": ["acoustic", "chill"],
+    "file": "music/Falling Through the Frets.wav"
+  },
+  {
+    "title": "Salt in My Head",
+    "tags": ["electronic", "moody"],
+    "file": "music/Salt in My Head.wav"
+  },
+  {
+    "title": "Soft Polaroids",
+    "tags": ["ambient", "dreamy"],
+    "file": "music/Soft Polaroids.wav"
+  }
+]
